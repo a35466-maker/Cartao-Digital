@@ -1,0 +1,451 @@
+/* =========================================================
+   RESET E VARIÁVEIS
+========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-start: #f8fafb;
+  --bg-end: #f1f5f9;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --color-top: #d51629;
+  --color-bottom: #192784;
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  --accent-color: #2541eb;
+  --radius: 15px;
+  --font-main: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+}
+
+/* =========================================================
+   LAYOUT GERAL
+========================================================= */
+.page-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  font-family: var(--font-main);
+}
+
+/* =========================================================
+   CARTÃO
+========================================================= */
+.card {
+  width: 100%;
+  max-width: 880px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: 80px 1fr;
+}
+
+.card-top {
+  height: 80px;
+  background: var(--color-top);
+  background-image: "";
+}
+
+/* Corpo */
+.card-body {
+  padding: 28px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+/* =========================================================
+   LOGOS
+========================================================= */
+.logo,
+.logoRemax {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  width: 100px;
+  margin-top: -90px;
+}
+
+.logoRemax {
+  width: 200px;
+  margin-top: -10px;
+}
+
+.Logo,
+.LogoRemax {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================================================
+   PERFIL
+========================================================= */
+.profile {
+  padding-top: 40px;
+  text-align: center;
+  margin-top: -56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 8px 24px rgba(17, 38, 133, 0.12);
+}
+
+.name {
+  margin-top: 14px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.role {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================================================
+   DIVISORES
+========================================================= */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #eef2f6;
+  margin: 20px;
+  border: none;
+}
+
+.divider.thin {
+  height: 1px;
+  background: #eef2f6;
+}
+
+/* =========================================================
+   CONTACTOS
+========================================================= */
+.contacts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2px;
+  gap: 8px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: #f5f5ff09;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(5, 5, 2, 0.1);
+}
+
+.row-sep {
+  width: 100%;
+  height: px;
+  background: #ffffff;
+  border: none;
+  margin: 6px 0;
+}
+
+.contact-row .icon {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: var(--color-top);
+}
+
+/* cores diferentes por linha */
+.contact-row:nth-of-type(1) .icon {
+  background: #d9e5f8;
+}
+.contact-row:nth-of-type(2) .icon {
+  background: #e8fff4;
+}
+.contact-row:nth-of-type(3) .icon {
+  background: #ffeced;
+}
+.contact-row:nth-of-type(4) .icon {
+  background: #d4e0f0;
+}
+
+.meta .label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.meta .value {
+  font-size: 15px;
+  color: #253f7c;
+  font-weight: 600;
+}
+
+.meta .value a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.meta .value a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BOTÕES SOCIAIS
+========================================================= */
+.social-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  width: 60px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: #f7fafc;
+  border: 1px solid rgba(36, 34, 110, 0.08);
+  color: var(--accent-color);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.social-btn svg {
+  display: block;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+}
+
+/* estilos individuais */
+.social-btn.LinkedIn {
+  background: #1b44a4;
+  color: #fff;
+  border: none;
+}
+
+.social-btn.insta {
+  background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+  color: #fff;
+  border: none;
+}
+
+.social-btn.tiktok {
+  background: #000;
+  color: #fff;
+  border: none;
+}
+
+.social-btn.facebook {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+}
+/* =========================================================
+   QR CODE + SHARE
+========================================================= */
+.qr-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.qr-text {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.qr {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border: 6px solid #fff;
+  border-radius: 10px;
+  padding: 6px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
+}
+
+.share-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  width: 200px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(90deg, #192784 25%, #c62c32 100%);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(198, 44, 50, 0.12);
+  transition: transform 0.12s ease;
+}
+
+.share-btn:active {
+  transform: translateY(1px);
+}
+
+.share-pop {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+  padding: 8px;
+  min-width: 180px;
+  text-align: center;
+  z-index: 30;
+}
+
+.share-pop.open {
+  display: block;
+}
+
+.export-option {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #f5f5f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.export-option:hover {
+  background: #ececee;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.card-bottom {
+  background-color: #102975;
+  padding: 20px;
+}
+
+.contato {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #fff;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item .icon {
+  width: 35px;
+}
+
+.texto {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width: 640px) {
+  .card {
+    max-width: 520px;
+  }
+  .avatar {
+    width: 112px;
+    height: 112px;
+  }
+  .qr {
+    width: 150px;
+    height: 150px;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  .social-buttons {
+    gap: 10px;
+  }
+  .share-btn {
+    width: 160px;
+  }
+}
+
+@media (max-width: 400px) {
+  .avatar {
+    width: 96px;
+    height: 96px;
+  }
+  .qr {
+    width: 130px;
+    height: 130px;
+  }
+  .social-btn,
+  .share-btn {
+    width: 140px;
+    padding: 8px 12px;
+  }
+  .texto {
+    font-size: 14px;
+  }
+  .item .icon {
+    width: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contato {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
